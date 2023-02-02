@@ -8,4 +8,5 @@ export interface GeolocationModel {
   admin1: string
   admin2: string
   admin3: string
+  country_code: string
 }

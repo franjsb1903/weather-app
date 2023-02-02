@@ -1,15 +1,12 @@
 ---
 import Layout from '../layouts/Layout.astro'
 import { FindLocation } from '../components/FindLocation'
-import { LocationProvider } from '../context/LocationContext'
 ---
 
 <Layout title="Weather App">
   <main
     class="flex flex-col justify-center items-center w-[80%] md:w-[50%] my-10"
   >
-    <LocationProvider>
-      <FindLocation client:load />
-    </LocationProvider>
+    <FindLocation client:load />
   </main>
 </Layout>
