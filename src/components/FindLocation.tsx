@@ -1,11 +1,14 @@
-import { useState, useEffect } from 'react'
+import { useState, useEffect, useContext } from 'react'
 import { Input } from './Input'
+import { LocationContext } from '../context/LocationContext'
 import type { GeolocationModel } from '../models/geolocation.model'
 import { geolocationService } from '../services/geolocation.service'
 
 export const FindLocation = () => {
   const [location, setLocation] = useState('')
   const [data, setData] = useState<GeolocationModel[]>([])
+
+  const { setLocation: setLocationSelected } = useContext(LocationContext)
 
   useEffect(() => {
     if (location) {
@@ -19,18 +22,5 @@ export const FindLocation = () => {
     }
   }, [location])
 
-  return (
-    <Input
-      setValue={setLocation}
-      value={location}
-      locations={
-        data?.map(l => ({
-          id: l.id,
-          name: `${l.name}${l.admin1 ? `, ${l.admin1}` : ''}${
-            l.admin2 ? `, ${l.admin2}` : ''
-          }${l.admin3 ? `, ${l.admin3}` : ''}, ${l.country}`,
-        })) ?? []
-      }
-    />
-  )
+  return <Input setValue={setLocation} value={location} />
 }
