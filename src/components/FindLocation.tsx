@@ -1,9 +1,11 @@
 import { useState, useEffect } from 'react'
 import { locationSelected } from '../stores/locationStore'
+import { weatherOfLocation } from '../stores/weatherStore'
 import { Input } from './Input'
-import type { GeolocationModel } from '../models/geolocation.model'
 import { geolocationService } from '../services/geolocation.service'
+import { weatherService } from '../services/weather.service'
 import { getGeolocationFullName } from '../utils/geolocation'
+import type { GeolocationModel } from '../models/geolocation.model'
 
 export const FindLocation = () => {
   const [location, setLocation] = useState('')
@@ -22,6 +24,18 @@ export const FindLocation = () => {
     }
   }, [location])
 
+  const onSelectLocation = (location: GeolocationModel) => {
+    locationSelected.set(location)
+    setData([])
+    setLocation('')
+    weatherService
+      .getWeatherByCoordinates(location.latitude, location.longitude)
+      .then(data => {
+        weatherOfLocation.set(data ?? null)
+      })
+      .catch(console.error)
+  }
+
   return (
     <>
       <Input setValue={setLocation} value={location} />
@@ -31,11 +45,7 @@ export const FindLocation = () => {
             key={location.id}
             className="bg-white border border-black rounded-md p-2"
             role="button"
-            onClick={() => {
-              locationSelected.set(location)
-              setData([])
-              setLocation('')
-            }}
+            onClick={() => onSelectLocation(location)}
           >
             <p className="text-2xl text-black">
               {getGeolocationFullName(location)}
