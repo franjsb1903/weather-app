@@ -1,3 +1,5 @@
+import type { WeatherModel } from '../models/weather/weather.model'
+
 export interface WeatherDomain {
-  getWeatherByCity: (city: string) => Promise<any>
+  getWeatherByCoordinates: (lat: number, lon: number) => Promise<WeatherModel>
 }
