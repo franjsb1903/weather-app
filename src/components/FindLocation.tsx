@@ -1,13 +1,13 @@
 import { useState, useEffect } from 'react'
+import Input from './Input'
 import { locationSelected } from '../stores/locationStore'
 import { weatherOfLocation } from '../stores/weatherStore'
-import { Input } from './Input'
 import { geolocationService } from '../services/geolocation.service'
 import { weatherService } from '../services/weather.service'
 import { getGeolocationFullName } from '../utils/geolocation'
 import type { GeolocationModel } from '../models/geolocation.model'
 
-export const FindLocation = () => {
+function FindLocation() {
   const [location, setLocation] = useState('')
   const [data, setData] = useState<GeolocationModel[]>([])
 
@@ -31,6 +31,7 @@ export const FindLocation = () => {
     weatherService
       .getWeatherByCoordinates(location.latitude, location.longitude)
       .then(data => {
+        console.log({ data })
         weatherOfLocation.set(data ?? null)
       })
       .catch(console.error)
@@ -56,3 +57,5 @@ export const FindLocation = () => {
     </>
   )
 }
+
+export default FindLocation
