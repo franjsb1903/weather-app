@@ -1,6 +1,7 @@
 ---
 import Layout from '../layouts/Layout.astro'
-import { FindLocation } from '../components/FindLocation'
+import FindLocation from '../components/FindLocation'
+import CurrentWeather from '../components/CurrentWeather'
 ---
 
 <Layout title="Weather App">
@@ -8,5 +9,6 @@ import { FindLocation } from '../components/FindLocation'
     class="flex flex-col justify-center items-center w-[80%] md:w-[50%] my-10"
   >
     <FindLocation client:load />
+    <CurrentWeather client:visible />
   </main>
 </Layout>
