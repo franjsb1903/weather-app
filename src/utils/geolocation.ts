@@ -1,15 +1,13 @@
 import type { GeolocationModel } from '../models/geolocation.model'
 
-function buildText(text: string) {
-  return text ? `, ${text.trim()}` : ''
-}
-
-export function getGeolocationFullName(geolocation: GeolocationModel) {
-  return `
-        ${geolocation.name}
-        ${buildText(geolocation.admin1)}
-        ${buildText(geolocation.admin2)}
-        ${buildText(geolocation.admin3)}, 
-        ${geolocation.country}
-    `
+export function getGeolocationFullName(geolocation: GeolocationModel | null) {
+  if (!geolocation) return ''
+  const texts = [
+    geolocation.name,
+    geolocation.admin1,
+    geolocation.admin2,
+    geolocation.admin3,
+    geolocation.country,
+  ].filter(text => text)
+  return texts.join(', ')
 }

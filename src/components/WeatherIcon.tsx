@@ -1,7 +1,7 @@
 interface WeatherIconProps {
   code: number
   alt: string
-  large: boolean
+  large?: boolean
 }
 
 function WeatherIcon({ alt, large, code }: WeatherIconProps) {
