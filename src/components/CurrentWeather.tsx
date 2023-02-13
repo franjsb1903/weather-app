@@ -30,7 +30,7 @@ function CurrentWeather() {
       <h4 className="text-5xl font-sans text-white">
         {formatTemperature(
           $weather?.current_weather?.temperature ?? 0,
-          $weather?.hourly_units?.temperature_2m ?? ''
+          $weather?.hourly_units?.temperature ?? ''
         )}
       </h4>
       <p className="text-3xl text-white">
@@ -42,15 +42,15 @@ function CurrentWeather() {
         <p className="text-lg text-white">
           Máx.{' '}
           {formatTemperature(
-            $weather?.daily?.temperature_2m_max[0] ?? 0,
-            $weather?.daily_units?.temperature_2m_max ?? ''
+            $weather?.daily?.temperature_max[0] ?? 0,
+            $weather?.daily_units?.temperature_max ?? ''
           )}
         </p>
         <p className="text-lg text-white">
           Mín.{' '}
           {formatTemperature(
-            $weather?.daily?.temperature_2m_min[0] ?? 0,
-            $weather?.daily_units?.temperature_2m_min ?? ''
+            $weather?.daily?.temperature_min[0] ?? 0,
+            $weather?.daily_units?.temperature_min ?? ''
           )}
         </p>
       </div>

@@ -1,5 +1,5 @@
 import type { WeatherDomain } from '../domains/weather.domain'
-import { WeatherFetch } from '../infraestructures/weather.infraestructure'
+import { OpenWeather } from '../infraestructures/weather.infraestructure'
 
 export class WeatherService {
   constructor(private weatherDTO: WeatherDomain) {}
@@ -9,6 +9,6 @@ export class WeatherService {
   }
 }
 
-export const weatherService = new WeatherService(new WeatherFetch())
+export const weatherService = new WeatherService(new OpenWeather())
 
 Object.freeze(weatherService)

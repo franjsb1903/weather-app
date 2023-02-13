@@ -41,26 +41,26 @@ function CardContainer({
         flex
         ${col ? 'flex-col' : 'flex-row'}
         ${nowrap ? 'flex-nowrap' : 'flex-wrap'}
-        ${gap ? `gap-${gap}` : ''}
-        ${justify ? `justify-${justify}` : ''}
-        ${items ? `items-${items}` : ''}
+        ${gap && `gap-${gap}`}
+        ${justify && `justify-${justify}`}
+        ${items && `items-${items}`}
         bg-blue-500 
         bg-opacity-50
         rounded-md
         ${show ? 'visible opacity-100' : 'invisible opacity-0'}
         ${width ? `w-${width}` : 'w-full'}
-        ${maxWidth ? `max-w-[${maxWidth}]` : ''}
-        ${height ? `h-${height}` : ''}
-        ${maxHeight ? `max-h-[${maxHeight}]` : ''}
-        ${minHeight ? `min-h-[${minHeight}]` : ''}
-        ${overflowY ? `overflow-y-${overflowY}` : ''}
-        ${overflowX ? `overflow-x-${overflowX}` : ''}
+        ${maxWidth && `max-w-[${maxWidth}]`}
+        ${height && `h-${height}`}
+        ${maxHeight && `max-h-[${maxHeight}]`}
+        ${minHeight && `min-h-[${minHeight}]`}
+        ${overflowY && `overflow-y-${overflowY}`}
+        ${overflowX && `overflow-x-${overflowX}`}
         mt-10
         p-5
         transition-opacity
         duration-300
         ease-in
-        ${additionalClasses ? additionalClasses.join(' ') : ''}`}
+        ${additionalClasses && additionalClasses.join(' ')}`}
     >
       {children}
     </section>

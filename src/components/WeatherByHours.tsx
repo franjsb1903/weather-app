@@ -43,8 +43,8 @@ function WeatherByHours() {
             />
             <p className="text-lg text-white">
               {formatTemperature(
-                $weather?.hourly?.temperature_2m[index + indexActualTime],
-                $weather?.hourly_units?.temperature_2m ?? ''
+                $weather?.hourly?.temperature[index + indexActualTime],
+                $weather?.hourly_units?.temperature ?? ''
               )}
             </p>
           </div>
