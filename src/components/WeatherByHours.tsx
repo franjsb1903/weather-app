@@ -17,20 +17,13 @@ function WeatherByHours() {
   return (
     <CardContainer
       col
+      altIcon="Hours"
+      icon={hoursIcon}
       nowrap
       show={$weather?.current_weather !== undefined}
+      title="PRÓXIMAS 24 HORAS"
       additionalClasses={['gap-2 p-2 pb-4 overflow-y-hidden']}
     >
-      <div className="flex gap-3 items-center w-full py-3 border-b-[1px] border-gray-400 border-opacity-70">
-        <img
-          src={hoursIcon}
-          alt="hours"
-          width="30px"
-          height="30px"
-          className="opacity-50"
-        />
-        <h6 className="text-gray-400 opacity-70 text-sm">PRÓXIMAS 24 HORAS</h6>
-      </div>
       <div className="flex flex-row gap-2 overflow-x-scroll py-2 card-scroll">
         {$weather?.hourly?.time
           .slice(indexActualTime, indexActualTime + 24)
