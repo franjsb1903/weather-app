@@ -16,13 +16,10 @@ function WeatherByHours() {
   return (
     <CardContainer
       nowrap
-      gap={2}
       show={$weather?.current_weather !== undefined}
-      maxWidth="500px"
-      height="150px"
-      overflowY="hidden"
-      overflowX="scroll"
-      additionalClasses={['search-scroll']}
+      additionalClasses={[
+        'search-scroll gap-2 h-[150px] overflow-x-scroll overflow-y-hidden',
+      ]}
     >
       {$weather?.hourly?.time
         .slice(indexActualTime, indexActualTime + 20)

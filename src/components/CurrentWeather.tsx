@@ -13,11 +13,8 @@ function CurrentWeather() {
   return (
     <CardContainer
       col
-      gap={3}
       show={$weather?.current_weather !== undefined}
-      minHeight="350px"
-      justify="start"
-      items="center"
+      additionalClasses={['min-h-[350px] gap-3 justify-start items-center']}
     >
       <WeatherIcon
         alt="Weather Icon of the current weather"
