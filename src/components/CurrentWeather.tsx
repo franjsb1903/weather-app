@@ -14,23 +14,25 @@ function CurrentWeather() {
     <CardContainer
       col
       show={$weather?.current_weather !== undefined}
-      additionalClasses={['min-h-[350px] gap-3 justify-start items-center']}
+      additionalClasses={[
+        'min-h-[300px] md:min-h-[350px] gap-3 justify-start items-center p-5',
+      ]}
     >
       <WeatherIcon
         alt="Weather Icon of the current weather"
         large
         code={$weather?.current_weather?.weathercode ?? 0}
       />
-      <h2 className="text-3xl md:text-3xl text-white">
+      <h2 className="text-xl md:text-3xl text-white">
         {$location?.name}, {$location?.country}
       </h2>
-      <h4 className="text-5xl font-sans text-white">
+      <h4 className="text-3xl md:text-5xl font-sans text-white">
         {formatTemperature(
           $weather?.current_weather?.temperature ?? 0,
           $weather?.hourly_units?.temperature ?? ''
         )}
       </h4>
-      <p className="text-3xl text-white">
+      <p className="text-xl md:text-3xl text-white">
         {translationCodeWeather.get(
           $weather?.current_weather?.weathercode ?? 0
         )}

@@ -7,10 +7,10 @@ interface WeatherIconProps {
 function WeatherIcon({ alt, large, code }: WeatherIconProps) {
   return (
     <img
-      src={`src/assets/images/${code}.svg`}
+      src={`src/assets/images/weatherIcons/${code}.svg`}
       alt={alt}
-      width={large ? '100px' : '50px'}
-      height={large ? '100px' : '50px'}
+      width={large ? '80px md:100px' : '30px md:50px'}
+      height={large ? '80px md:100px' : '30px md:50px'}
     />
   )
 }

@@ -12,7 +12,7 @@ function Input({
       onChange={e => {
         setValue(e.target.value)
       }}
-      className="p-2 text-2xl text-black rounded-md border-none w-full"
+      className="p-2 text-xl md:text-2xl text-black rounded-md border-none w-full"
       placeholder="Escribe una localización..."
     />
   )

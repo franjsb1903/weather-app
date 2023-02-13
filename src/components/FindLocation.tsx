@@ -48,7 +48,7 @@ function FindLocation() {
             role="button"
             onClick={() => onSelectLocation(location)}
           >
-            <p className="text-2xl text-black">
+            <p className="text-xl md:text-2xl text-black">
               {getGeolocationFullName(location)}
             </p>
           </div>

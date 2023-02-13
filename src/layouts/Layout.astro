@@ -17,9 +17,9 @@ const { title } = Astro.props
     <meta name="generator" content={Astro.generator} />
     <title>{title}</title>
   </head>
-  <body class="bg-blue-300 text-white">
+  <body class="bg-black text-white">
     <Header />
-    <div class="grid place-items-center">
+    <div class="flex justify-center">
       <slot />
     </div>
   </body>
@@ -28,21 +28,28 @@ const { title } = Astro.props
 <style is:global>
   .search-scroll {
     scrollbar-width: thin;
-    scrollbar-color: #fff rgb(59 130 246 / 0.5);
+    scrollbar-color: #fff rgb(0 0 0 / 0);
   }
 
   /* Chrome, Edge, and Safari */
-  .search-scroll::-webkit-scrollbar {
+  .search-scroll::-webkit-scrollbar,
+  .card-scroll::-webkit-scrollbar {
     width: 3px;
     height: 3px;
   }
 
   .search-scroll::-webkit-scrollbar-track {
+    background: rgb(0 0 0 / 0);
+    border-radius: 5px;
+  }
+
+  .card-scroll::-webkit-scrollbar-track {
     background: rgb(59 130 246 / 0.5);
     border-radius: 5px;
   }
 
-  .search-scroll::-webkit-scrollbar-thumb {
+  .search-scroll::-webkit-scrollbar-thumb,
+  .card-scroll::-webkit-scrollbar-thumb {
     background-color: #fff;
     border-radius: 14px;
     border: 1px solid white;
