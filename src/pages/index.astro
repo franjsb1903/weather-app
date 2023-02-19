@@ -3,6 +3,7 @@ import Layout from '../layouts/Layout.astro'
 import FindLocation from '../components/FindLocation'
 import CurrentWeather from '../components/CurrentWeather'
 import WeatherByHours from '../components/WeatherByHours'
+import WeatherByDay from '../components/WeatherByDay'
 ---
 
 <Layout title="Weather App">
@@ -13,6 +14,7 @@ import WeatherByHours from '../components/WeatherByHours'
     <section class="w-full lg:w-[500px]">
       <CurrentWeather client:visible />
       <WeatherByHours client:visible />
+      <WeatherByDay client:visible />
     </section>
   </main>
 </Layout>
