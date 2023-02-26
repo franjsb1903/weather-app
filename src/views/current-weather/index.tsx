@@ -1,10 +1,10 @@
 import { useStore } from '@nanostores/react'
+import CardContainer from '../../containers/card-container'
 import WeatherIcon from '../../components/icon/weather-icon'
 import { translationCodeWeather } from '../../config/code-weather'
 import { locationSelected } from '../../stores/location-store'
 import { weatherOfLocation } from '../../stores/weather-store'
 import { formatTemperature } from '../../utils/weather-utils'
-import CardContainer from '../../containers/card-container'
 
 function CurrentWeather() {
   const $location = useStore(locationSelected)
@@ -14,9 +14,7 @@ function CurrentWeather() {
     <CardContainer
       col
       show={$weather?.current_weather !== undefined}
-      additionalClasses={[
-        'min-h-[300px] md:min-h-[350px] gap-3 justify-start items-center p-5',
-      ]}
+      className="mt-10 min-h-[300px] md:min-h-[350px] gap-3 justify-start items-center p-5 rounded-t-md"
     >
       <WeatherIcon
         alt="Weather Icon of the current weather"

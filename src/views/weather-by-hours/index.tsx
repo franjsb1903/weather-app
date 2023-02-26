@@ -8,7 +8,8 @@ import {
 } from '../../utils/weather-utils'
 import WeatherIcon from '../../components/icon/weather-icon'
 import CardContainer from '../../containers/card-container'
-import hoursIcon from '../assets/images/icons/hours.svg'
+import hoursIcon from '../../assets/images/icons/hours.svg'
+import { formatTime } from '../../utils/date-format-utils'
 
 function WeatherByHours() {
   const $weather = useStore(weatherOfLocation)
@@ -25,9 +26,9 @@ function WeatherByHours() {
       nowrap
       show={$weather?.current_weather !== undefined}
       title="PRÓXIMAS 24 HORAS"
-      additionalClasses={['gap-2 p-2 pb-4 overflow-y-hidden']}
+      className="mt-10 gap-2 p-2 pb-4 overflow-y-hidden rounded-md"
     >
-      <div className="flex flex-row gap-2 overflow-x-scroll py-2 card-scroll">
+      <div className="flex flex-row gap-4 overflow-x-scroll py-2 card-scroll">
         {$weather?.hourly?.time
           .slice(indexActualTime, indexActualTime + 24)
           .map((time, index) => (
@@ -36,7 +37,7 @@ function WeatherByHours() {
               className="flex flex-col justify-between items-center"
             >
               <p className="text-lg text-white">
-                {format(new Date(time), 'HH:mm')}
+                {index === 0 ? 'Ahora' : formatTime(new Date(time))}
               </p>
               <WeatherIcon
                 alt={`Weather Icon of the weather at ${format(

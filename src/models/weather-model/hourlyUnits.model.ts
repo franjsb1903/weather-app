@@ -1,19 +1,19 @@
 export interface HourlyUnits {
-  time: string
-  temperature: string
-  relativehumidity: string
-  dewpoint: string
   apparent_temperature: string
+  cloudcover: string
+  dewpoint: string
+  preassure: string
   precipitation: string
   rain: string
+  relativehumidity: string
   showers: string
-  weathercode: string
-  preassure: string
+  soil_temperature: string
   surface_preasure: string
-  cloudcover: string
+  temperature: string
+  time: string
   visibility: string
-  windspeed: string
+  weathercode: string
   winddirection: string
   windgusts: string
-  soil_temperature: string
+  windspeed: string
 }

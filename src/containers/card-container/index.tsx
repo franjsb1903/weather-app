@@ -1,7 +1,7 @@
 import type React from 'react'
 
 interface CardContainerProps {
-  additionalClasses?: string[]
+  className?: string
   altIcon?: string
   icon?: string
   children: React.ReactElement | React.ReactElement[]
@@ -10,10 +10,11 @@ interface CardContainerProps {
   width?: string
   show?: boolean
   title?: string
+  mt?: number
 }
 
 function CardContainer({
-  additionalClasses,
+  className,
   altIcon,
   icon,
   children,
@@ -31,14 +32,12 @@ function CardContainer({
         ${nowrap ? 'flex-nowrap' : 'flex-wrap'}
         bg-blue-400 
         bg-opacity-50
-        rounded-md
         ${show ? 'visible opacity-100' : 'invisible opacity-0'}
         ${width ? `w-[${width}]` : 'w-full'}
-        mt-10
         transition-opacity
         duration-300
         ease-in
-        ${additionalClasses && additionalClasses.join(' ')}`}
+        ${className}`}
     >
       {title && (
         <div className="flex gap-3 items-center w-full py-3 border-b-[1px] border-gray-400 border-opacity-70">
