@@ -3,8 +3,8 @@ import { useStore } from '@nanostores/react'
 import { format } from 'date-fns'
 import { weatherOfLocation } from '../stores/weatherStore'
 import { formatTemperature, getActualTimeIndex } from '../utils/weather'
-import WeatherIcon from './WeatherIcon'
-import CardContainer from './CardContainer'
+import WeatherIcon from '../components/WeatherIcon'
+import CardContainer from '../containers/CardContainer'
 import hoursIcon from '../assets/images/icons/hours.svg'
 
 function WeatherByHours() {

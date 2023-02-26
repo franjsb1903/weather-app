@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react'
-import Input from './Input'
+import Input from '../components/Input'
 import { locationSelected } from '../stores/locationStore'
 import { weatherOfLocation } from '../stores/weatherStore'
 import { geolocationService } from '../services/geolocation.service'

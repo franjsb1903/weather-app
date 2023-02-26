@@ -1,10 +1,10 @@
 import { useStore } from '@nanostores/react'
-import WeatherIcon from './WeatherIcon'
+import WeatherIcon from '../components/WeatherIcon'
 import { translationCodeWeather } from '../data/codeWeather'
 import { locationSelected } from '../stores/locationStore'
 import { weatherOfLocation } from '../stores/weatherStore'
 import { formatTemperature } from '../utils/weather'
-import CardContainer from './CardContainer'
+import CardContainer from '../containers/CardContainer'
 
 function CurrentWeather() {
   const $location = useStore(locationSelected)

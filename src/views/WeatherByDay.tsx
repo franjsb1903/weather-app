@@ -1,9 +1,9 @@
 import { useStore } from '@nanostores/react'
 import { format } from 'date-fns'
 import { weatherOfLocation } from '../stores/weatherStore'
-import CardContainer from './CardContainer'
+import CardContainer from '../containers/CardContainer'
 import CalendarIcon from '../assets/images/icons/calendar.svg'
-import WeatherIcon from './WeatherIcon'
+import WeatherIcon from '../components/WeatherIcon'
 import { formatTemperature } from '../utils/weather'
 
 function WeatherByDay() {
