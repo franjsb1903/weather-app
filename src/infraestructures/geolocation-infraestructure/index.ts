@@ -1,7 +1,7 @@
-import type { GeolocationDomain } from '../domains/geolocation.domain'
+import type { GeolocationDomain } from '../../domains/geolocation-domain'
 
-import { API_GEOLOCATION_URL } from '../config/constants'
-import type { GeolocationModel } from '../models/geolocation.model'
+import { API_GEOLOCATION_URL } from '../../config/constants'
+import type { GeolocationModel } from '../../models/geolocation-model'
 
 export class GeolocationFetch implements GeolocationDomain {
   async geolocateByName(name: string): Promise<GeolocationModel[]> {

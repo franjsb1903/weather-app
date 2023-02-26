@@ -1,5 +1,5 @@
-import type { WeatherDomain } from '../domains/weather.domain'
-import { OpenWeather } from '../infraestructures/weather.infraestructure'
+import type { WeatherDomain } from '../../domains/weather-domain'
+import { OpenWeather } from '../../infraestructures/weather-infraestructure'
 
 export class WeatherService {
   constructor(private weatherDTO: WeatherDomain) {}

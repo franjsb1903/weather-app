@@ -1,11 +1,11 @@
 import { useState, useEffect } from 'react'
-import Input from '../components/Input'
-import { locationSelected } from '../stores/locationStore'
-import { weatherOfLocation } from '../stores/weatherStore'
-import { geolocationService } from '../services/geolocation.service'
-import { weatherService } from '../services/weather.service'
-import { getGeolocationFullName } from '../utils/geolocation'
-import type { GeolocationModel } from '../models/geolocation.model'
+import Input from '../../components/input'
+import { locationSelected } from '../../stores/location-store'
+import { weatherOfLocation } from '../../stores/weather-store'
+import { geolocationService } from '../../services/geolocation-service'
+import { weatherService } from '../../services/weather-service'
+import { getGeolocationFullName } from '../../utils/geolocation-utils'
+import type { GeolocationModel } from '../../models/geolocation-model'
 
 function FindLocation() {
   const [location, setLocation] = useState('')

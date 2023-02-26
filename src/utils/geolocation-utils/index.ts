@@ -1,4 +1,4 @@
-import type { GeolocationModel } from '../models/geolocation.model'
+import type { GeolocationModel } from '../../models/geolocation-model'
 
 export function getGeolocationFullName(geolocation: GeolocationModel | null) {
   if (!geolocation) return ''

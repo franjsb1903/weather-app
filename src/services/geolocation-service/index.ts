@@ -1,5 +1,5 @@
-import type { GeolocationDomain } from '../domains/geolocation.domain'
-import { GeolocationFetch } from '../infraestructures/geolocation.infraestructure'
+import type { GeolocationDomain } from '../../domains/geolocation-domain'
+import { GeolocationFetch } from '../../infraestructures/geolocation-infraestructure'
 
 class GeolocationService {
   constructor(private geolocationDTO: GeolocationDomain) {}

@@ -1,7 +1,7 @@
-import type { WeatherDomain } from '../domains/weather.domain'
-import type { WeatherModel } from '../models/weather/weather.model'
-import type { OpenWeatherModel } from '../models/openMeteoWeather/weather.model'
-import { API_WEATHER_URL } from '../config/constants'
+import type { WeatherDomain } from '../../domains/weather-domain'
+import type { WeatherModel } from '../../models/weather-model'
+import type { OpenWeatherModel } from '../../models/open-meteo-weather-model'
+import { API_WEATHER_URL } from '../../config/constants'
 
 export class OpenWeather implements WeatherDomain {
   async getWeatherByCoordinates(
