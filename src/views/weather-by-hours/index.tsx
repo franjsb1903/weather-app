@@ -1,22 +1,17 @@
-import { useMemo } from 'react'
 import { useStore } from '@nanostores/react'
 import { format } from 'date-fns'
 import { weatherOfLocation } from '../../stores/weather-store'
-import {
-  formatTemperature,
-  getActualTimeIndex,
-} from '../../utils/weather-utils'
+import { formatTemperature } from '../../utils/weather-utils'
 import WeatherIcon from '../../components/icon/weather-icon'
 import CardContainer from '../../containers/card-container'
 import hoursIcon from '../../assets/images/icons/hours.svg'
 import { formatTime } from '../../utils/date-format-utils'
+import useIndexActualTime from '../../hooks/use-index-actual-time'
 
 function WeatherByHours() {
   const $weather = useStore(weatherOfLocation)
 
-  const indexActualTime = useMemo(() => {
-    return getActualTimeIndex($weather?.hourly?.time ?? [])
-  }, [$weather?.hourly?.time])
+  const indexActualTime = useIndexActualTime()
 
   return (
     <CardContainer

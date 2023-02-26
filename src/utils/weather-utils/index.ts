@@ -4,6 +4,23 @@ export function formatTemperature(temperature: number, unit: string) {
   return `${Math.round(temperature)}${unit}`
 }
 
+export function formatWindSpeed(speed: number, unit: string) {
+  return `${Math.round(speed)} ${unit}`
+}
+
+export function getRotationClass(degrees: number | undefined) {
+  const rotation = degrees ?? 0
+  if (rotation > 0 && rotation <= 45) return 'rotate-[45deg]'
+  if (rotation > 45 && rotation <= 90) return 'rotate-90'
+  if (rotation > 90 && rotation <= 135) return 'rotate-[135deg]'
+  if (rotation > 135 && rotation <= 180) return 'rotate-180'
+  if (rotation > 180 && rotation <= 225) return 'rotate-[225deg]'
+  if (rotation > 225 && rotation <= 270) return 'rotate-[270deg]'
+  if (rotation > 270 && rotation <= 315) return 'rotate-[315deg]'
+  if (rotation > 315 && rotation <= 360) return 'rotate-[360deg]'
+  return 'rotate-0'
+}
+
 export function getActualTimeIndex(times: string[]) {
   const now = new Date()
   now.setMinutes(0)

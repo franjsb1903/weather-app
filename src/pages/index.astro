@@ -4,6 +4,9 @@ import FindLocation from '../views/find-location'
 import CurrentWeather from '../views/current-weather'
 import WeatherByHours from '../views/weather-by-hours'
 import WeatherByDay from '../views/weather-by-day'
+import WeatherCardsContainer from '../containers/weather-cards-container'
+import WindCard from '../views/wind-card'
+import TemperatureCard from '../views/temperature-card'
 ---
 
 <Layout title="Weather App">
@@ -15,6 +18,10 @@ import WeatherByDay from '../views/weather-by-day'
       <CurrentWeather client:visible />
       <WeatherByDay client:visible />
       <WeatherByHours client:visible />
+      <WeatherCardsContainer client:visible>
+        <WindCard client:visible />
+        <TemperatureCard client:visible />
+      </WeatherCardsContainer>
     </section>
   </main>
 </Layout>

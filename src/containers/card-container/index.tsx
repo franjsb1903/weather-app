@@ -10,7 +10,6 @@ interface CardContainerProps {
   width?: string
   show?: boolean
   title?: string
-  mt?: number
 }
 
 function CardContainer({
@@ -40,15 +39,15 @@ function CardContainer({
         ${className}`}
     >
       {title && (
-        <div className="flex gap-3 items-center w-full py-3 border-b-[1px] border-gray-400 border-opacity-70">
+        <div className="flex gap-3 items-center w-full py-2 border-b-[1px] border-gray-400 border-opacity-70">
           <img
             src={icon}
             alt={altIcon}
-            width="30px"
-            height="30px"
-            className="opacity-50"
+            className="w-[15px] h-[15px] md:w-[30px] md:h-[30px] opacity-50"
           />
-          <h6 className="text-gray-400 opacity-70 text-sm">{title}</h6>
+          <h6 className="text-gray-400 opacity-70 text-[0.6rem] md:text-sm">
+            {title.toUpperCase()}
+          </h6>
         </div>
       )}
       {children}
