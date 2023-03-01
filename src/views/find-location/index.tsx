@@ -31,7 +31,6 @@ function FindLocation() {
     weatherService
       .getWeatherByCoordinates(location.latitude, location.longitude)
       .then(data => {
-        console.log({ data })
         weatherOfLocation.set(data ?? null)
       })
       .catch(console.error)

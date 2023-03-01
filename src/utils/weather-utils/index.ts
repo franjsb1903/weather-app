@@ -1,4 +1,5 @@
 import { format } from 'date-fns'
+import { formatByTimezone } from '../date-format-utils'
 
 export function formatTemperature(temperature: number, unit: string) {
   return `${Math.round(temperature)}${unit}`
@@ -21,10 +22,14 @@ export function getRotationClass(degrees: number | undefined) {
   return 'rotate-0'
 }
 
-export function getActualTimeIndex(times: string[]) {
+export function getActualTimeIndex(times: string[], timeZone: string) {
   const now = new Date()
   now.setMinutes(0)
-  const actualTime = format(now.valueOf(), "yyyy-MM-dd'T'HH:mm")
-  const index = times.findIndex(time => time === actualTime)
+  const actualTimeByZone = formatByTimezone(now, timeZone)
+  const index = times.findIndex(time => {
+    const dateTime = new Date(time)
+    const stringDate = format(dateTime.valueOf(), 'd/M/yyyy, H:mm')
+    return stringDate === actualTimeByZone
+  })
   return index === -1 ? 0 : index
 }

@@ -8,3 +8,14 @@ export function formatDate(date: Date, formatString: string) {
 export function formatTime(time: Date) {
   return format(new Date(time), 'HH:mm', { locale: es })
 }
+
+export function formatByTimezone(date: Date, timeZone: string) {
+  return Intl.DateTimeFormat('es-ES', {
+    timeZone,
+    hour: 'numeric',
+    minute: 'numeric',
+    day: 'numeric',
+    year: 'numeric',
+    month: 'numeric',
+  }).format(date)
+}
