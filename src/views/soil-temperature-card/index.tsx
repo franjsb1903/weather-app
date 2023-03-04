@@ -11,7 +11,7 @@ function SoilTemperatureCard() {
 
   return $weather?.hourly ? (
     <WeatherCardContainer
-      title="Temperatura suelo"
+      title="Suelo"
       icon={SoilTemperatureIcon}
       altIcon="Soil Temperature Icon"
     >
