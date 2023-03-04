@@ -8,13 +8,8 @@ import { formatDate } from '../../utils/date-format-utils'
 function WeatherByDay() {
   const $weather = useStore(weatherOfLocation)
 
-  return (
-    <CardContainer
-      col
-      nowrap
-      show={$weather?.daily !== undefined}
-      className="gap-2 p-2 pb-4 mt-0 rounded-b-md overflow-y-hidden"
-    >
+  return $weather?.daily ? (
+    <CardContainer className="gap-2 p-2 pb-4 mt-0 rounded-b-md overflow-y-hidden">
       <div className="flex flex-row gap-2 md:gap-5 overflow-x-scroll py-2 card-scroll">
         {$weather?.daily?.time.map((time, index) => {
           const weatherCode = $weather?.daily?.weathercode[index]
@@ -58,7 +53,7 @@ function WeatherByDay() {
         })}
       </div>
     </CardContainer>
-  )
+  ) : null
 }
 
 export default WeatherByDay

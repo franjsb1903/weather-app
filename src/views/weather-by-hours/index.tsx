@@ -13,13 +13,10 @@ function WeatherByHours() {
 
   const indexActualTime = useIndexActualTime()
 
-  return (
+  return $weather?.current_weather ? (
     <CardContainer
-      col
       altIcon="Hours"
       icon={hoursIcon}
-      nowrap
-      show={$weather?.current_weather !== undefined}
       title="PRÓXIMAS 24 HORAS"
       className="mt-10 gap-2 p-2 pb-4 overflow-y-hidden rounded-md"
     >
@@ -53,7 +50,7 @@ function WeatherByHours() {
           ))}
       </div>
     </CardContainer>
-  )
+  ) : null
 }
 
 export default WeatherByHours

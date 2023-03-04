@@ -10,9 +10,9 @@ function WindCard() {
   const $weather = useStore(weatherOfLocation)
   const indexActualTime = useIndexActualTime()
 
-  return (
+  return $weather?.hourly ? (
     <WeatherCardContainer
-      show={$weather?.hourly !== undefined}
+      between
       title="Viento"
       icon={WindIcon}
       altIcon="Wind Icon"
@@ -39,7 +39,7 @@ function WindCard() {
         )}
       </p>
     </WeatherCardContainer>
-  )
+  ) : null
 }
 
 export default WindCard

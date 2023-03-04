@@ -10,12 +10,8 @@ function CurrentWeather() {
   const $location = useStore(locationSelected)
   const $weather = useStore(weatherOfLocation)
 
-  return (
-    <CardContainer
-      col
-      show={$weather?.current_weather !== undefined}
-      className="mt-10 min-h-[300px] md:min-h-[350px] gap-3 justify-start items-center p-5 rounded-t-md"
-    >
+  return $weather?.current_weather ? (
+    <CardContainer col largeHeight className="mt-10 gap-3 p-5 rounded-t-md">
       <WeatherIcon
         alt="Weather Icon of the current weather"
         large
@@ -52,7 +48,7 @@ function CurrentWeather() {
         </p>
       </div>
     </CardContainer>
-  )
+  ) : null
 }
 
 export default CurrentWeather

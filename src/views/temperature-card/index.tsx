@@ -9,9 +9,9 @@ function TemperatureCard() {
   const $weather = useStore(weatherOfLocation)
   const indexActualTime = useIndexActualTime()
 
-  return (
+  return $weather?.hourly ? (
     <WeatherCardContainer
-      show={$weather?.hourly !== undefined}
+      between
       title="Sensación"
       icon={TemperatureIcon}
       altIcon="Temperature Icon"
@@ -39,7 +39,7 @@ function TemperatureCard() {
         </p>
       </section>
     </WeatherCardContainer>
-  )
+  ) : null
 }
 
 export default TemperatureCard

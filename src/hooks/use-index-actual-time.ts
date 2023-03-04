@@ -8,7 +8,7 @@ function useIndexActualTime() {
   const $location = useStore(locationSelected)
   const $weather = useStore(weatherOfLocation)
 
-  const indexActualTime = useMemo(() => {
+  const indexActualTime: number = useMemo(() => {
     return getActualTimeIndex(
       $weather?.hourly?.time ?? [],
       $location?.timezone ?? 'Europe/Madrid'

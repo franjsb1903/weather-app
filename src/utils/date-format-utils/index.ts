@@ -9,6 +9,10 @@ export function formatTime(time: Date) {
   return format(new Date(time), 'HH:mm', { locale: es })
 }
 
+export function isBeforeThanNow(date: Date) {
+  return date.getTime() < new Date().getTime()
+}
+
 export function formatByTimezone(date: Date, timeZone: string) {
   return Intl.DateTimeFormat('es-ES', {
     timeZone,

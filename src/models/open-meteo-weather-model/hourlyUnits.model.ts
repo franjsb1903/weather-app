@@ -8,8 +8,8 @@ export interface HourlyUnits {
   rain: string
   showers: string
   weathercode: string
-  preassure_msl: string
-  surface_preasure: string
+  pressure_msl: string
+  surface_pressure: string
   cloudcover: string
   cloudcover_low: string
   cloudcover_mid: string

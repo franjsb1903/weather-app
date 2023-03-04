@@ -9,14 +9,13 @@ function PrecipitationCard() {
   const $weather = useStore(weatherOfLocation)
   const indexActualTime = useIndexActualTime()
 
-  return (
+  return $weather?.hourly ? (
     <WeatherCardContainer
-      show={$weather?.hourly !== undefined}
       title="Precipitaciones"
       icon={PrecipitationIcon}
       altIcon="Precipitation Icon"
     >
-      <p className="text-white text-xl">
+      <p className="text-white text-lg md:text-xl">
         Precipitaciones de{' '}
         {formatWeatherData(
           $weather?.hourly.precipitation[indexActualTime] ?? 0,
@@ -26,7 +25,7 @@ function PrecipitationCard() {
         en las últimas horas
       </p>
     </WeatherCardContainer>
-  )
+  ) : null
 }
 
 export default PrecipitationCard

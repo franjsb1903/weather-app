@@ -1,6 +1,5 @@
 ---
 import Layout from '../layouts/Layout.astro'
-import WeatherCardsContainer from '../containers/weather-cards-container'
 import FindLocation from '../views/find-location'
 import CurrentWeather from '../views/current-weather'
 import WeatherByHours from '../views/weather-by-hours'
@@ -9,6 +8,10 @@ import WindCard from '../views/wind-card'
 import TemperatureCard from '../views/temperature-card'
 import HumidityCard from '../views/humidity-card'
 import PrecipitationCard from '../views/precipitation-card'
+import PressureCard from '../views/pressure-card'
+import CloudCoverCard from '../views/cloudcover-card'
+import SoilTemperatureCard from '../views/soil-temperature-card'
+import SunriseSunsetCard from '../views/sunrise-sunset-card'
 ---
 
 <Layout title="Weather App">
@@ -17,15 +20,19 @@ import PrecipitationCard from '../views/precipitation-card'
   >
     <FindLocation client:load />
     <section class="w-full lg:w-[500px]">
-      <CurrentWeather client:visible />
-      <WeatherByDay client:visible />
-      <WeatherByHours client:visible />
-      <WeatherCardsContainer client:visible>
-        <WindCard client:visible />
-        <TemperatureCard client:visible />
-        <HumidityCard client:visible />
-        <PrecipitationCard client:visible />
-      </WeatherCardsContainer>
+      <CurrentWeather client:only />
+      <WeatherByDay client:only />
+      <WeatherByHours client:only />
+      <div class="grid grid-cols-2 gap-4 mt-10">
+        <WindCard client:only />
+        <TemperatureCard client:only />
+        <HumidityCard client:only />
+        <PrecipitationCard client:only />
+        <PressureCard client:only />
+        <CloudCoverCard client:only />
+        <SoilTemperatureCard client:only />
+        <SunriseSunsetCard client:only />
+      </div>
     </section>
   </main>
 </Layout>

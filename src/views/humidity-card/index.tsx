@@ -9,9 +9,9 @@ function HumidityCard() {
   const $weather = useStore(weatherOfLocation)
   const indexActualTime = useIndexActualTime()
 
-  return (
+  return $weather?.hourly ? (
     <WeatherCardContainer
-      show={$weather?.hourly !== undefined}
+      between
       title="Humedad"
       icon={HumidityIcon}
       altIcon="Humidity Icon"
@@ -31,7 +31,7 @@ function HumidityCard() {
         en este momento
       </p>
     </WeatherCardContainer>
-  )
+  ) : null
 }
 
 export default HumidityCard
