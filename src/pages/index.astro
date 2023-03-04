@@ -1,12 +1,14 @@
 ---
 import Layout from '../layouts/Layout.astro'
+import WeatherCardsContainer from '../containers/weather-cards-container'
 import FindLocation from '../views/find-location'
 import CurrentWeather from '../views/current-weather'
 import WeatherByHours from '../views/weather-by-hours'
 import WeatherByDay from '../views/weather-by-day'
-import WeatherCardsContainer from '../containers/weather-cards-container'
 import WindCard from '../views/wind-card'
 import TemperatureCard from '../views/temperature-card'
+import HumidityCard from '../views/humidity-card'
+import PrecipitationCard from '../views/precipitation-card'
 ---
 
 <Layout title="Weather App">
@@ -21,6 +23,8 @@ import TemperatureCard from '../views/temperature-card'
       <WeatherCardsContainer client:visible>
         <WindCard client:visible />
         <TemperatureCard client:visible />
+        <HumidityCard client:visible />
+        <PrecipitationCard client:visible />
       </WeatherCardsContainer>
     </section>
   </main>

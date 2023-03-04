@@ -4,7 +4,7 @@ import WeatherIcon from '../../components/icon/weather-icon'
 import { translationCodeWeather } from '../../config/code-weather'
 import { locationSelected } from '../../stores/location-store'
 import { weatherOfLocation } from '../../stores/weather-store'
-import { formatTemperature } from '../../utils/weather-utils'
+import { formatWeatherData } from '../../utils/weather-utils'
 
 function CurrentWeather() {
   const $location = useStore(locationSelected)
@@ -25,7 +25,7 @@ function CurrentWeather() {
         {$location?.name}, {$location?.country}
       </h2>
       <h4 className="text-3xl md:text-5xl font-sans text-white">
-        {formatTemperature(
+        {formatWeatherData(
           $weather?.current_weather?.temperature ?? 0,
           $weather?.hourly_units?.temperature ?? ''
         )}
@@ -38,14 +38,14 @@ function CurrentWeather() {
       <div className="flex flex-row justify-evenly w-[80%]">
         <p className="text-lg text-white">
           Máx.{' '}
-          {formatTemperature(
+          {formatWeatherData(
             $weather?.daily?.temperature_max[0] ?? 0,
             $weather?.daily_units?.temperature_max ?? ''
           )}
         </p>
         <p className="text-lg text-white">
           Mín.{' '}
-          {formatTemperature(
+          {formatWeatherData(
             $weather?.daily?.temperature_min[0] ?? 0,
             $weather?.daily_units?.temperature_min ?? ''
           )}

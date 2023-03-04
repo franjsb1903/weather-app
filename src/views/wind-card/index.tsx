@@ -1,14 +1,13 @@
 import { useStore } from '@nanostores/react'
 import { weatherOfLocation } from '../../stores/weather-store'
 import WeatherCardContainer from '../../containers/weather-card-container'
-import useIndexActualTime from '../../hooks/use-index-actual-time'
-import { formatWindSpeed, getRotationClass } from '../../utils/weather-utils'
+import { formatWeatherData, getRotationClass } from '../../utils/weather-utils'
 import WindArrow from '../../assets/images/weatherIcons/wind-arrow.svg'
 import WindIcon from '../../assets/images/icons/wind.svg'
+import useIndexActualTime from '../../hooks/use-index-actual-time'
 
 function WindCard() {
   const $weather = useStore(weatherOfLocation)
-
   const indexActualTime = useIndexActualTime()
 
   return (
@@ -25,16 +24,18 @@ function WindCard() {
         )}`}
       />
       <p className="text-white text-lg md:text-xl">
-        {formatWindSpeed(
+        {formatWeatherData(
           $weather?.hourly.windspeed[indexActualTime] ?? 0,
-          $weather?.hourly_units?.windspeed ?? ''
+          $weather?.hourly_units?.windspeed ?? '',
+          true
         )}
       </p>
       <p className="text-white text-xs">
         Ráfagas de{' '}
-        {formatWindSpeed(
+        {formatWeatherData(
           $weather?.hourly.windgusts[indexActualTime] ?? 0,
-          $weather?.hourly_units.windgusts ?? ''
+          $weather?.hourly_units.windgusts ?? '',
+          true
         )}
       </p>
     </WeatherCardContainer>

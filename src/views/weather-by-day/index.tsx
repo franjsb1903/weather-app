@@ -2,7 +2,7 @@ import { useStore } from '@nanostores/react'
 import { weatherOfLocation } from '../../stores/weather-store'
 import CardContainer from '../../containers/card-container'
 import WeatherIcon from '../../components/icon/weather-icon'
-import { formatTemperature } from '../../utils/weather-utils'
+import { formatWeatherData } from '../../utils/weather-utils'
 import { formatDate } from '../../utils/date-format-utils'
 
 function WeatherByDay() {
@@ -50,8 +50,8 @@ function WeatherByDay() {
                 code={weatherCode}
               />
               <p className="text-white text-end">
-                {formatTemperature(tempMax, tempMaxUnit)} /{' '}
-                {formatTemperature(tempMin, tempMinUnit)}
+                {formatWeatherData(tempMax, tempMaxUnit)} /{' '}
+                {formatWeatherData(tempMin, tempMinUnit)}
               </p>
             </div>
           )

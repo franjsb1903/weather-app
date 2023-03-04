@@ -1,7 +1,7 @@
 import { useStore } from '@nanostores/react'
 import { format } from 'date-fns'
 import { weatherOfLocation } from '../../stores/weather-store'
-import { formatTemperature } from '../../utils/weather-utils'
+import { formatWeatherData } from '../../utils/weather-utils'
 import WeatherIcon from '../../components/icon/weather-icon'
 import CardContainer from '../../containers/card-container'
 import hoursIcon from '../../assets/images/icons/hours.svg'
@@ -44,7 +44,7 @@ function WeatherByHours() {
                 }
               />
               <p className="text-lg text-white">
-                {formatTemperature(
+                {formatWeatherData(
                   $weather?.hourly?.temperature[index + indexActualTime],
                   $weather?.hourly_units?.temperature ?? ''
                 )}

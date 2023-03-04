@@ -1,12 +1,12 @@
 import { format } from 'date-fns'
 import { formatByTimezone } from '../date-format-utils'
 
-export function formatTemperature(temperature: number, unit: string) {
-  return `${Math.round(temperature)}${unit}`
-}
-
-export function formatWindSpeed(speed: number, unit: string) {
-  return `${Math.round(speed)} ${unit}`
+export function formatWeatherData(
+  data: number,
+  unit: string,
+  hasSpace?: boolean
+) {
+  return `${Math.round(data)}${hasSpace ? ' ' : ''}${unit}`
 }
 
 export function getRotationClass(degrees: number | undefined) {
