@@ -2,7 +2,7 @@
 
 *En progreso...*
 
-Aplicación del tiempo rescatando los datos de la API pública [OpenWeather](https://openweathermap.org/api).
+Aplicación del tiempo rescatando los datos de la API pública [Open Meteo](https://open-meteo.com/).
 
 Está realizado empleando Astro.
 
